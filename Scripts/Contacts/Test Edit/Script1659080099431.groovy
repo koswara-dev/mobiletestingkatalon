@@ -19,28 +19,17 @@ import org.openqa.selenium.Keys as Keys
 
 Mobile.startExistingApplication('com.android.contacts')
 
-Mobile.tap(findTestObject('Object Repository/Contacts/android.widget.ImageButton'), 0)
+Mobile.tap(findTestObject('Object Repository/Contacts/android.widget.TextView - Test'), 0)
 
-Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Name'), 'TestLagi', 0)
+Mobile.tap(findTestObject('Object Repository/Contacts/android.widget.TextView (1)'), 0)
 
-Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Phone'), '0891234', 0)
+Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Test'), 'Koswara', 0)
 
-Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Email'), 'test@email.com', 0)
+Mobile.tap(findTestObject('Object Repository/Contacts/android.widget.TextView (2)'), 0)
 
-Mobile.scrollToText('More fields', FailureHandling.STOP_ON_FAILURE)
+txtTitle = Mobile.getText(findTestObject('Object Repository/Contacts/android.widget.TextView - Koswara (1)'), 0)
 
-Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Email (1)'), 'test1@email.com', 0)
-
-Mobile.tap(findTestObject('Object Repository/Contacts/android.widget.TextView'), 0)
-
-txtLargeTitle = Mobile.getText(findTestObject('Object Repository/Contacts/android.widget.TextView - Koswara'), 0)
-
-println(txtLargeTitle.toString())
-
-Mobile.verifyElementText(findTestObject('Contacts/android.widget.TextView - Koswara'), txtLargeTitle)
-
-Mobile.verifyElementAttributeValue(findTestObject('Contacts/android.widget.TextView - Koswara'), 'resource-id', 'com.android.contacts:id/large_title', 
-    0)
+Mobile.verifyElementText(findTestObject('Contacts/android.widget.TextView - Koswara (1)'), txtTitle)
 
 Mobile.closeApplication()
 
