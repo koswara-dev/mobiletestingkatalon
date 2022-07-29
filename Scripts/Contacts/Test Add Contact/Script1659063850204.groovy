@@ -17,19 +17,25 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startExistingApplication('com.android.calculator2')
+Mobile.startExistingApplication('com.android.contacts')
 
-Mobile.tap(findTestObject('android.widget.Button - 5'), 0)
+Mobile.tap(findTestObject('Object Repository/Contacts/android.widget.ImageButton'), 0)
 
-Mobile.tap(findTestObject('BtnKali'), 0)
+Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Name'), 'TestLagi', 0)
 
-Mobile.tap(findTestObject('android.widget.Button - 6'), 0)
+Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Phone'), '0891234', 0)
 
-Mobile.tap(findTestObject('BtnEqual'), 0)
+Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Email'), 'test@email.com', 0)
 
-txtResult = Mobile.getText(findTestObject('Object Repository/ViewResult'), 0)
+Mobile.scrollToText('More fields', FailureHandling.STOP_ON_FAILURE)
 
-Mobile.verifyElementText(findTestObject('ViewResult'), txtResult)
+Mobile.setText(findTestObject('Object Repository/Contacts/android.widget.EditText - Email (1)'), 'test1@email.com', 0)
+
+Mobile.tap(findTestObject('Object Repository/Contacts/android.widget.TextView'), 0)
+
+txtLargeTitle = Mobile.getText(findTestObject('Object Repository/Contacts/android.widget.TextView - Koswara'), 0)
+
+Mobile.verifyElementText(findTestObject('Contacts/android.widget.TextView - Koswara'), txtLargeTitle)
 
 Mobile.closeApplication()
 

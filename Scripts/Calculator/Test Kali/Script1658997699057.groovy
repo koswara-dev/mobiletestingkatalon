@@ -19,17 +19,17 @@ import org.openqa.selenium.Keys as Keys
 
 Mobile.startExistingApplication('com.android.calculator2')
 
-Mobile.tap(findTestObject('android.widget.Button - 1'), 0)
+Mobile.tap(findTestObject('Calculator/android.widget.Button - 5'), 0)
 
-Mobile.tap(findTestObject('BtnAdd'), 0)
+Mobile.tap(findTestObject('Calculator/BtnKali'), 0)
 
-Mobile.tap(findTestObject('android.widget.Button - 7'), 0)
+Mobile.tap(findTestObject('Calculator/android.widget.Button - 6'), 0)
 
-Mobile.tap(findTestObject('BtnEqual'), 0)
+Mobile.tap(findTestObject('Calculator/BtnEqual'), 0)
 
-txtResult = Mobile.getText(findTestObject('Object Repository/ViewResult'), 0)
+txtResult = Mobile.getText(findTestObject('Object Repository/Calculator/ViewResult'), 0)
 
-Mobile.verifyElementText(findTestObject('ViewResult'), txtResult)
+Mobile.verifyElementText(findTestObject('Calculator/ViewResult'), txtResult)
 
 Mobile.closeApplication()
 
